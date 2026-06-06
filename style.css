@@ -12,6 +12,7 @@ body {
   min-height: 100%;
   background-color: #000000;
   overflow: hidden;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
 #nebula-layer {
@@ -33,4 +34,169 @@ body {
   height: 100%;
   z-index: 1;
   pointer-events: none;
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.logo {
+  width: min(400px, 70vw);
+  height: auto;
+  margin-bottom: 60px;
+  filter: drop-shadow(0 0 30px rgba(100, 180, 255, 0.5))
+          drop-shadow(0 0 60px rgba(100, 180, 255, 0.3));
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 30px rgba(100, 180, 255, 0.5))
+            drop-shadow(0 0 60px rgba(100, 180, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(100, 180, 255, 0.7))
+            drop-shadow(0 0 80px rgba(100, 180, 255, 0.5));
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  pointer-events: all;
+}
+
+.btn {
+  padding: 16px 40px;
+  border: 2px solid;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-about {
+  border-color: #4a9eff;
+  box-shadow: 0 0 15px rgba(74, 158, 255, 0.3), inset 0 0 15px rgba(74, 158, 255, 0.1);
+}
+
+.btn-about:hover {
+  background: rgba(74, 158, 255, 0.2);
+  box-shadow: 0 0 30px rgba(74, 158, 255, 0.5), inset 0 0 30px rgba(74, 158, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.btn-machines {
+  border-color: #ff6b4a;
+  box-shadow: 0 0 15px rgba(255, 107, 74, 0.3), inset 0 0 15px rgba(255, 107, 74, 0.1);
+}
+
+.btn-machines:hover {
+  background: rgba(255, 107, 74, 0.2);
+  box-shadow: 0 0 30px rgba(255, 107, 74, 0.5), inset 0 0 30px rgba(255, 107, 74, 0.2);
+  transform: translateY(-3px);
+}
+
+.btn-mechanics {
+  border-color: #4aff88;
+  box-shadow: 0 0 15px rgba(74, 255, 136, 0.3), inset 0 0 15px rgba(74, 255, 136, 0.1);
+}
+
+.btn-mechanics:hover {
+  background: rgba(74, 255, 136, 0.2);
+  box-shadow: 0 0 30px rgba(74, 255, 136, 0.5), inset 0 0 30px rgba(74, 255, 136, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Стили для внутренних страниц */
+.page-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  padding: 40px;
+}
+
+.page-title {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.page-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+.back-btn {
+  pointer-events: all;
+  padding: 14px 35px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
