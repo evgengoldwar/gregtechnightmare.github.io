@@ -12,14 +12,24 @@
 
 <div class="page-content">
     <h1 class="page-title">Machines</h1>
-    <p class="page-description">
-        Электрические печи, дробители, центрифуги, электролизёры
-        и десятки других многофункциональных машин.
-        Автоматизируй производство и покори мир технологий.
-    </p>
-    <a href="index.html" class="back-btn">← Назад</a>
+
+    <div id="machines-grid" class="machines-grid"></div>
+
+    <a href="index.html" class="back-btn">← Back</a>
+</div>
+
+<!-- Модальное окно -->
+<div id="machine-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-images" class="modal-images"></div>
+        <p id="modal-description" class="modal-description"></p>
+    </div>
 </div>
 
 <script src="scripts/stars.js"></script>
+<script src="scripts/machines.js"></script>
 </body>
 </html>
