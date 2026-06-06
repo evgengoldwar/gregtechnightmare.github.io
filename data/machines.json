@@ -23,5 +23,10 @@
     "name": "Medium Power Extruder",
     "folder": "MediumPowerExtruder",
     "description": ""
+  },
+  {
+    "name": "Medium Power Assembler",
+    "folder": "MediumPowerAssembler",
+    "description": ""
   }
 ]
