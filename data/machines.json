@@ -1,40 +1,5 @@
 [
   {
-    "name": "Electric Furnace",
-    "folder": "electric_furnace",
-    "description": "The Electric Furnace is a basic machine that uses electricity to smelt items. It is faster and more energy efficient than a traditional coal furnace. Can be upgraded with overclocker upgrades for increased speed."
-  },
-  {
-    "name": "Macerator",
-    "folder": "macerator",
-    "description": "The Macerator grinds ores and other materials into dust, doubling your ore output. Essential for efficient resource processing in the early game."
-  },
-  {
-    "name": "Compressor",
-    "folder": "compressor",
-    "description": "The Compressor compresses items into more compact forms. Used to create advanced alloys, compressed plates, and various industrial materials."
-  },
-  {
-    "name": "Extractor",
-    "folder": "extractor",
-    "description": "The Extractor extracts valuable substances from raw materials. Essential for obtaining rubber from resin and various chemical extractions."
-  },
-  {
-    "name": "Industrial Centrifuge",
-    "folder": "centrifuge",
-    "description": "The Industrial Centrifuge separates materials into their component parts using high-speed rotation. Required for processing complex ores and creating advanced materials."
-  },
-  {
-    "name": "Electrolyzer",
-    "folder": "electrolyzer",
-    "description": "The Electrolyzer uses electricity to break down compounds into their elemental components. Key machine for chemical processing chains."
-  },
-  {
-    "name": "Assembler",
-    "folder": "assembler",
-    "description": "The Assembler combines multiple components into complex items. Automates crafting of circuits, machine parts, and other advanced components."
-  },
-  {
     "name": "Chemical Reactor",
     "folder": "chemical_reactor",
     "description": "The Chemical Reactor combines chemical compounds to create new substances. Essential for producing advanced materials, fuels, and chemical products."
