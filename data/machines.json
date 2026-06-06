@@ -1,31 +1,37 @@
 [
   {
     "name": "Bronze Void Miner",
+    "tier": "STEAM",
     "folder": "BronzeVoidMiner",
     "description": ""
   },
   {
     "name": "Advanced BBF",
+    "tier": "STEAM",
     "folder": "AdvancedBBF",
     "description": ""
   },
   {
     "name": "Low Power Void Miner",
+    "tier": "LV",
     "folder": "LowPowerVoidMiner",
     "description": ""
   },
   {
     "name": "Medium Power Bender",
+    "tier": "MV",
     "folder": "MediumPowerBender",
     "description": ""
   },
   {
     "name": "Medium Power Extruder",
+    "tier": "MV",
     "folder": "MediumPowerExtruder",
     "description": ""
   },
   {
     "name": "Medium Power Assembler",
+    "tier": "MV",
     "folder": "MediumPowerAssembler",
     "description": ""
   }

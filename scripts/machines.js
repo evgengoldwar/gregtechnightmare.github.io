@@ -6,6 +6,8 @@ class MachinesPage {
     this.modalImages = document.getElementById('modal-images');
     this.modalDescription = document.getElementById('modal-description');
     this.machines = [];
+    this.filteredMachines = [];
+    this.currentTier = 'all';
     this.maxExtraImages = 20;
 
     this.init();
@@ -13,8 +15,10 @@ class MachinesPage {
 
   async init() {
     await this.loadMachines();
+    this.filteredMachines = [...this.machines];
     this.renderCards();
     this.setupModal();
+    this.setupFilters();
   }
 
   async loadMachines() {
@@ -25,6 +29,7 @@ class MachinesPage {
       this.machines = rawData.map(machine => ({
         name: machine.name,
         folder: machine.folder,
+        tier: machine.tier,
         image: `assets/machines/${machine.folder}/Main.png`,
         extraImages: this.generateExtraImagePaths(machine.folder),
         description: machine.description || ''
@@ -43,13 +48,40 @@ class MachinesPage {
     return paths;
   }
 
+  filterMachines(tier) {
+    this.currentTier = tier;
+    if (tier === 'all') {
+      this.filteredMachines = [...this.machines];
+    } else {
+      this.filteredMachines = this.machines.filter(m => m.tier === tier);
+    }
+    this.renderCards();
+  }
+
+  setupFilters() {
+    const filterButtons = document.querySelectorAll('.tier-btn');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.filterMachines(btn.dataset.tier);
+      });
+    });
+  }
+
   renderCards() {
     this.grid.innerHTML = '';
 
-    this.machines.forEach((machine, index) => {
+    if (this.filteredMachines.length === 0) {
+      this.grid.innerHTML = '<p class="no-machines">No machines found for this tier</p>';
+      return;
+    }
+
+    this.filteredMachines.forEach((machine, index) => {
       const card = document.createElement('div');
       card.className = 'machine-card';
-      card.style.animationDelay = `${index * 0.1}s`;
+      card.style.animationDelay = `${index * 0.05}s`;
 
       card.innerHTML = `
         <div class="card-image-container">
@@ -71,36 +103,36 @@ class MachinesPage {
     this.modalTitle.textContent = machine.name;
     this.modalImages.innerHTML = '';
 
-    const allImages = [machine.image, ...machine.extraImages];
+    // Показываем Main
+    const mainWrapper = document.createElement('div');
+    mainWrapper.className = 'modal-image-wrapper';
+    const mainImg = document.createElement('img');
+    mainImg.alt = machine.name;
+    mainImg.className = 'modal-image';
+    mainImg.onerror = () => {
+      mainImg.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a1a2e%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23555%22 x=%22200%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2218%22%3ENo Image%3C/text%3E%3C/svg%3E';
+    };
+    mainImg.src = machine.image;
+    mainWrapper.appendChild(mainImg);
+    this.modalImages.appendChild(mainWrapper);
 
-    allImages.forEach((imgSrc, index) => {
+    // Пробуем загрузить Extra, скрываем если не загрузились
+    machine.extraImages.forEach((imgSrc) => {
       const imgWrapper = document.createElement('div');
       imgWrapper.className = 'modal-image-wrapper';
       imgWrapper.style.display = 'none';
-      imgWrapper.style.alignItems = 'center';
-      imgWrapper.style.justifyContent = 'center';
 
       const img = document.createElement('img');
-      img.alt = `${machine.name} image ${index + 1}`;
+      img.alt = `${machine.name} extra`;
       img.className = 'modal-image';
-      img.style.maxWidth = 'calc(100% - 20px)';
-      img.style.maxHeight = 'calc(100% - 20px)';
-      img.style.width = 'auto';
-      img.style.height = 'auto';
-      img.style.margin = '10px';
-      img.style.objectFit = 'contain';
-      img.style.alignSelf = 'center';
-      img.style.justifySelf = 'center';
 
       img.onload = () => {
         imgWrapper.style.display = 'flex';
       };
 
       img.onerror = () => {
-        if (index === 0) {
-          img.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a1a2e%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23555%22 x=%22200%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2218%22%3ENo Image%3C/text%3E%3C/svg%3E';
-          imgWrapper.style.display = 'flex';
-        }
+        // Не показываем, враппер остаётся скрытым
+        imgWrapper.remove();
       };
 
       img.src = imgSrc;
