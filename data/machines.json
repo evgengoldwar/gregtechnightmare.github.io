@@ -2,6 +2,26 @@
   {
     "name": "Bronze Void Miner",
     "folder": "BronzeVoidMiner",
-    "description": "The Bronze Void Miner extracts resources directly from the void. A powerful multiblock structure for passive resource generation."
+    "description": ""
+  },
+  {
+    "name": "Advanced BBF",
+    "folder": "AdvancedBBF",
+    "description": ""
+  },
+  {
+    "name": "Low Power Void Miner",
+    "folder": "LowPowerVoidMiner",
+    "description": ""
+  },
+  {
+    "name": "Medium Power Bender",
+    "folder": "MediumPowerBender",
+    "description": ""
+  },
+  {
+    "name": "Medium Power Extruder",
+    "folder": "MediumPowerExtruder",
+    "description": ""
   }
 ]
