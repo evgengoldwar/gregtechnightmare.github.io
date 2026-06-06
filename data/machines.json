@@ -1,10 +1,5 @@
 [
   {
-    "name": "Chemical Reactor",
-    "folder": "chemical_reactor",
-    "description": "The Chemical Reactor combines chemical compounds to create new substances. Essential for producing advanced materials, fuels, and chemical products."
-  },
-  {
     "name": "Bronze Void Miner",
     "folder": "BronzeVoidMiner",
     "description": "The Bronze Void Miner extracts resources directly from the void. A powerful multiblock structure for passive resource generation."
