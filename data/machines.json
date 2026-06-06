@@ -34,5 +34,17 @@
     "tier": "MV",
     "folder": "MediumPowerAssembler",
     "description": ""
+  },
+  {
+    "name": "Medium Power Circuit Assembler",
+    "tier": "MV",
+    "folder": "MediumPowerCircuitAssembler",
+    "description": ""
+  },
+  {
+    "name": "Advanced Coke Oven",
+    "tier": "STEAM",
+    "folder": "AdvancedCokeOven",
+    "description": ""
   }
 ]
