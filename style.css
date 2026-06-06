@@ -38,15 +38,24 @@ body {
   padding: 20px;
 }
 
-.logo {
-  max-width: 300px;
-  width: 60vw;
-  height: auto;
+.logo-container {
+  width: 100%;
+  max-width: 350px;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  display: block;
+  object-fit: contain;
   filter: drop-shadow(0 0 20px rgba(100, 180, 255, 0.5))
           drop-shadow(0 0 40px rgba(100, 180, 255, 0.3));
   animation: logoGlow 3s ease-in-out infinite;
-  display: block;
 }
 
 @keyframes logoGlow {
@@ -192,6 +201,7 @@ body {
   transform: translateY(-2px);
 }
 
+/* Адаптивность */
 @media (max-width: 600px) {
   .buttons {
     flex-direction: column;
@@ -204,7 +214,7 @@ body {
     padding: 14px 20px;
   }
 
-  .logo {
+  .logo-container {
     max-width: 220px;
     margin-bottom: 30px;
   }
