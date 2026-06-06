@@ -19,6 +19,7 @@ class MachinesPage {
     this.renderCards();
     this.setupModal();
     this.setupFilters();
+    this.setupImageZoom();
   }
 
   async loadMachines() {
@@ -70,6 +71,35 @@ class MachinesPage {
     });
   }
 
+  setupImageZoom() {
+    this.zoomOverlay = document.createElement('div');
+    this.zoomOverlay.className = 'zoom-overlay';
+    this.zoomOverlay.innerHTML = `
+      <button class="zoom-close">&times;</button>
+      <img class="zoom-image" src="" alt="Zoomed image">
+    `;
+    document.body.appendChild(this.zoomOverlay);
+
+    this.zoomImage = this.zoomOverlay.querySelector('.zoom-image');
+    this.zoomClose = this.zoomOverlay.querySelector('.zoom-close');
+
+    this.zoomClose.addEventListener('click', () => {
+      this.zoomOverlay.classList.remove('active');
+    });
+
+    this.zoomOverlay.addEventListener('click', (e) => {
+      if (e.target === this.zoomOverlay) {
+        this.zoomOverlay.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.zoomOverlay.classList.contains('active')) {
+        this.zoomOverlay.classList.remove('active');
+      }
+    });
+  }
+
   renderCards() {
     this.grid.innerHTML = '';
 
@@ -103,7 +133,6 @@ class MachinesPage {
     this.modalTitle.textContent = machine.name;
     this.modalImages.innerHTML = '';
 
-    // Показываем Main
     const mainWrapper = document.createElement('div');
     mainWrapper.className = 'modal-image-wrapper';
     const mainImg = document.createElement('img');
@@ -113,10 +142,13 @@ class MachinesPage {
       mainImg.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a1a2e%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%23555%22 x=%22200%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2218%22%3ENo Image%3C/text%3E%3C/svg%3E';
     };
     mainImg.src = machine.image;
+    mainImg.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.openZoom(machine.image);
+    });
     mainWrapper.appendChild(mainImg);
     this.modalImages.appendChild(mainWrapper);
 
-    // Пробуем загрузить Extra, скрываем если не загрузились
     machine.extraImages.forEach((imgSrc) => {
       const imgWrapper = document.createElement('div');
       imgWrapper.className = 'modal-image-wrapper';
@@ -131,11 +163,14 @@ class MachinesPage {
       };
 
       img.onerror = () => {
-        // Не показываем, враппер остаётся скрытым
         imgWrapper.remove();
       };
 
       img.src = imgSrc;
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.openZoom(imgSrc);
+      });
       imgWrapper.appendChild(img);
       this.modalImages.appendChild(imgWrapper);
     });
@@ -149,6 +184,11 @@ class MachinesPage {
 
     this.modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+  }
+
+  openZoom(src) {
+    this.zoomImage.src = src;
+    this.zoomOverlay.classList.add('active');
   }
 
   closeModal() {
