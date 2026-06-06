@@ -1,94 +1,24 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>IMPACT: GREGTECH EDITION</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="<%= productDescription %>">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GregTech Nightmare - Мод для Minecraft</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="icon" type="image/ico" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- Анимированный фон с частицами -->
-<div class="particles-background" id="particles"></div>
-
-<!-- Шапка -->
-<header class="header">
-    <div class="header-content">
-        <div class="logo-container">
-            <div class="logo-icon">
-                <i class="fas fa-cog spinning-gear"></i>
-            </div>
-            <div>
-                <h1 class="logo-title">GregTech <span class="nightmare-text">Nightmare</span></h1>
-                <p class="logo-subtitle">Технологический мод для Minecraft</p>
-            </div>
-        </div>
-        <nav class="nav-menu">
-            <button class="nav-btn active" data-category="multiblocks">
-                <i class="fas fa-cubes"></i> Мультиблоки
-            </button>
-            <button class="nav-btn" data-category="mechanics">
-                <i class="fas fa-cogs"></i> Механики
-            </button>
-        </nav>
-    </div>
-</header>
-
-<!-- Основной контент -->
-<main class="main-content">
-    <!-- Секция с заголовком -->
-    <section class="section-header">
-        <h2 id="section-title" class="section-title">
-            <span class="title-icon"><i class="fas fa-cubes"></i></span>
-            Мультиблоки
-        </h2>
-        <p id="section-description" class="section-description">
-            Сложные многоблочные структуры для автоматизации процессов
-        </p>
-        <div class="search-container">
-            <input type="text" id="search" class="search-input" placeholder="Поиск...">
-            <i class="fas fa-search search-icon"></i>
-        </div>
-    </section>
-
-    <!-- Сетка карточек -->
-    <div id="cards-container" class="cards-grid">
-        <!-- Загрузка -->
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Загрузка данных...</p>
-        </div>
-    </div>
-</main>
-
-<!-- Модальное окно для деталей -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div id="modal-body">
-            <!-- Детали загружаются динамически -->
-        </div>
-    </div>
-</div>
-
-<!-- Подвал -->
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2024 GregTech Nightmare. Все права защищены.</p>
-        <div class="social-links">
-            <a href="https://github.com/GregTechNightmare" target="_blank" class="social-link">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-link">
-                <i class="fab fa-discord"></i>
-            </a>
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
+<!-- DO NOT touch the following DIV -->
+<div id="q-app"></div>
 </body>
 </html>
