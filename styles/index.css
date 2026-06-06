@@ -1,0 +1,135 @@
+.content {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 20px;
+}
+
+.logo-container {
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(100, 180, 255, 0.5))
+          drop-shadow(0 0 40px rgba(100, 180, 255, 0.3));
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(100, 180, 255, 0.5))
+            drop-shadow(0 0 40px rgba(100, 180, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(100, 180, 255, 0.7))
+            drop-shadow(0 0 60px rgba(100, 180, 255, 0.5));
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 2px solid;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-about {
+  border-color: #4a9eff;
+  box-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+}
+
+.btn-about:hover {
+  background: rgba(74, 158, 255, 0.2);
+  box-shadow: 0 0 20px rgba(74, 158, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-machines {
+  border-color: #ff6b4a;
+  box-shadow: 0 0 10px rgba(255, 107, 74, 0.3);
+}
+
+.btn-machines:hover {
+  background: rgba(255, 107, 74, 0.2);
+  box-shadow: 0 0 20px rgba(255, 107, 74, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-mechanics {
+  border-color: #4aff88;
+  box-shadow: 0 0 10px rgba(74, 255, 136, 0.3);
+}
+
+.btn-mechanics:hover {
+  background: rgba(74, 255, 136, 0.2);
+  box-shadow: 0 0 20px rgba(74, 255, 136, 0.5);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .logo-container {
+    max-width: 220px;
+    margin-bottom: 30px;
+  }
+}
