@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Mana Hatch",
+    "title": "WORKS",
+    "titleColor": "#4aff88",
+    "folder": "ManaHatch",
+    "description": "Charges using mana from the Botania mod. To charge it, aim mana bursts from a Mana Spreader directly at the Mana Hatch. It stores as much mana as a single Mana Pool. To view the stored mana, hold a Wand of the Forest."
+  },
+  {
+    "name": "Structures Link Tool",
+    "title": "NOT IMPLEMENTED",
+    "titleColor": "#ff6b4a",
+    "folder": "StructuresLinkTool",
+    "description": "Allows you to connect different multiblocks to each other and use information from one multiblock in another. It is not currently used anywhere, but the mechanic has been implemented."
+  },
+  {
+    "name": "Mana Prospector",
+    "title": "WORKS",
+    "titleColor": "#4aff88",
+    "folder": "ManaProspector",
+    "description": "Allows you to scan the terrain for the presence of Underground Fluids and Pollution ore. Consumes mana when used. Can be upgraded with mana like the Terra Shatterer. The higher the level, the larger the scanning radius. Note: when mana is consumed, the level may drop if the mana level corresponds to a different tier."
+  }
+]

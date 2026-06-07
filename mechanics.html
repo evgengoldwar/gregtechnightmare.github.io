@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,23 @@
 
 <div class="page-content">
     <h1 class="page-title">Mechanics</h1>
-    <p class="page-description">
-    </p>
+
+    <div id="mechanics-grid" class="mechanics-grid"></div>
+
     <a href="index.html" class="back-btn">← Back</a>
 </div>
 
+<div id="mechanic-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-images" class="modal-images"></div>
+        <p id="modal-description" class="modal-description"></p>
+    </div>
+</div>
+
 <script src="scripts/stars.js"></script>
+<script src="scripts/mechanics.js"></script>
 </body>
 </html>
