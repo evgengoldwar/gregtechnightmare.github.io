@@ -46,5 +46,107 @@
     "tier": "STEAM",
     "folder": "AdvancedCokeOven",
     "description": ""
+  },
+  {
+    "name": "Node Energizer",
+    "tier": "HV",
+    "folder": "NodeEnergizer",
+    "description": ""
+  },
+  {
+    "name": "Arcane Assembler",
+    "tier": "LUV",
+    "folder": "ArcaneAssembler",
+    "description": ""
+  },
+  {
+    "name": "Tree Sprouter",
+    "tier": "LV",
+    "folder": "TreeSprouter",
+    "description": ""
+  },
+  {
+    "name": "Creosote Engine",
+    "tier": "LV",
+    "folder": "CreosoteEngine",
+    "description": ""
+  },
+  {
+    "name": "Medium Power Wiremill",
+    "tier": "MV",
+    "folder": "MediumPowerWiremill",
+    "description": ""
+  },
+  {
+    "name": "Medium Power Engraver",
+    "tier": "MV",
+    "folder": "MediumPowerEngraver",
+    "description": ""
+  },
+  {
+    "name": "Extreme Power Circuit Assembler",
+    "tier": "EV",
+    "folder": "ExtremePowerCircuitAssembler",
+    "description": ""
+  },
+  {
+    "name": "Ultimate Precise",
+    "tier": "UHV",
+    "folder": "UltimatePrecise",
+    "description": ""
+  },
+  {
+    "name": "Gas Collector",
+    "tier": "LV",
+    "folder": "GasCollector",
+    "description": ""
+  },
+  {
+    "name": "Laser Meteor Miner",
+    "tier": "IV",
+    "folder": "LaserMeteorMiner",
+    "description": ""
+  },
+  {
+    "name": "Blood Enchanter",
+    "tier": "IV",
+    "folder": "BloodEnchanter",
+    "description": ""
+  },
+  {
+    "name": "Vacuum Nuke",
+    "tier": "HV",
+    "folder": "VacuumNuke",
+    "description": ""
+  },
+  {
+    "name": "Improved Algae Farm",
+    "tier": "HV",
+    "folder": "ImprovedAlgaeFarm",
+    "description": ""
+  },
+  {
+    "name": "Improved Slice'N'Splice",
+    "tier": "EV",
+    "folder": "ImprovedSliceNSplice",
+    "description": ""
+  },
+  {
+    "name": "High Power Component Assembler",
+    "tier": "HV",
+    "folder": "HighPowerComponentAssembler",
+    "description": ""
+  },
+  {
+    "name": "Zero Power Wiremill",
+    "tier": "ZPM",
+    "folder": "ZeroPowerWiremill",
+    "description": ""
+  },
+  {
+    "name": "Magic EBF",
+    "tier": "MV",
+    "folder": "MagicEBF",
+    "description": ""
   }
 ]
